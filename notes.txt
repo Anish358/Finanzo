@@ -1,3 +1,4 @@
 
 1. to make fonts accessible globally add them to the body's classname tag
-2. You can create nested layouts using Nextjs Route groups features 
+2. You can create nested layouts using Nextjs Route groups features
+3. while creating a sidebar if you want to highlight the active page use the usePathname from next to find out the path of the current page then highlight the page accordingly
