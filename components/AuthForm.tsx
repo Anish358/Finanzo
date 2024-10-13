@@ -3,16 +3,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import { Form } from "@/components/ui/form";
-import { authFormSchema } from "../lib/utils";
-import { useRouter } from "next/navigation";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import CustomInput from "./CustomInput";
+import { authFormSchema } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
-import { signIn, signUp } from "@/lib/actions/user.action";
+import { useRouter } from "next/navigation";
+import { signIn, signUp } from "@/lib/actions/user.actions";
 import PlaidLink from "./PlaidLink";
 
 const AuthForm = ({ type }: { type: string }) => {
@@ -21,18 +31,23 @@ const AuthForm = ({ type }: { type: string }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const formSchema = authFormSchema(type);
+
+  // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
+      password: "",
     },
   });
 
+  // 2. Define a submit handler.
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setIsLoading(true);
 
     try {
       // Sign up with Appwrite & create plaid token
+
       if (type === "sign-up") {
         const userData = {
           firstName: data.firstName!,
@@ -61,6 +76,7 @@ const AuthForm = ({ type }: { type: string }) => {
         if (response) router.push("/");
       }
     } catch (error) {
+      console.log(error);
     } finally {
       setIsLoading(false);
     }
