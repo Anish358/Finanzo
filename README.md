@@ -13,7 +13,7 @@ If you are visiting my live-deployed version, please note that this project uses
 
 ### Instructions:
 
-- While signing up, please use the hardcoded data, as it aligns with the sandbox environment.
+- While signing up, please use the placeholder data, as it aligns with the sandbox environment.
 - When adding a bank account, click on "Connect Bank" after signing up. Currently, only the first 2-3 banks function correctly, and only the first 2-3 accounts within those banks are operational.
 - After selecting a bank, you can log in using the following credentials:
 - **Username:** `user_good`

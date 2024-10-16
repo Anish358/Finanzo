@@ -97,6 +97,18 @@ const AuthForm = ({ type }: { type: string }) => {
           </h1>
         </Link>
 
+        <p className="text-red-500">
+          Important Notice: Please read the github Readme before Signing up.
+          <br />
+          <a
+            href="https://github.com/Anish358/Finanzo/blob/master/README.md"
+            target="_blank"
+            className="text-blue-500"
+          >
+            Github.
+          </a>
+        </p>
+
         <div className="flex flex-col gap-1 md:gap-3">
           <h1 className="text-24 lg:text-36 font-semibold text-gray-900">
             {user ? "Link Account" : type === "sign-in" ? "Sign In" : "Sign Up"}
