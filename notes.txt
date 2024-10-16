@@ -16,3 +16,14 @@ postalCode - string 10
 dateOfBirth - string 100
 ssn - string 50
 state - string 1000
+
+Features to add:
+Sign up form correction
+Profile page
+UI FIX HOME page
+Sharable id or account id copy
+auto select source account
+transfer note optional
+mail updates to receipant
+my banks page add bank button
+
